@@ -1,4 +1,6 @@
 const fs = require('fs');
+const chalk = require('chalk');
+
 const readline = require('readline');
 const TestCase = require('./TestCase');
 
@@ -74,7 +76,7 @@ const parseLine = line => {
 const writeFile = data => {
   fs.writeFile('output.dat', data.join('\n'), 'utf8', err => {
     if (err) throw err;
-    console.log('The file has been saved!');
+    console.log(chalk.cyan('The file output.dat has been saved!'));
   });
 };
 
