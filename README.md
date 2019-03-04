@@ -15,13 +15,20 @@ npm start
 
 #### using a sh script
 
-Download [standalone-gasmission.sh](https://github.com/alepoletto/gas-mission/blob/master/scripts/standalone-gasmission.sh). and execute:
+Anywhere in your terminal execute:
+
+```shell
+## this will clone the repository, install node and run the application
+curl https://raw.githubusercontent.com/alepoletto/gas-mission/master/scripts/standalone-gasmission.sh | sh
+```
+
+you also can manually download [standalone-gasmission.sh](https://raw.githubusercontent.com/alepoletto/gas-mission/master/scripts/standalone-gasmission.sh). and execute in the same folder:
 
 ```shell
 sh standalone-gasmission.sh
 ```
 
-If you already cloned the repository you can in the project folder:
+If you already cloned the repository you can go to the project folder and execute:
 
 ```shell
 sh scripts/gasmission.sh
