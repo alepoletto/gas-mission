@@ -4,7 +4,7 @@
 
 ### Run
 
-#### using a installed nodejs
+#### Using an installed nodejs
 
 In the project directory, install the node modules and start the application:
 
@@ -13,7 +13,7 @@ npm install
 npm start
 ```
 
-#### without any installation using a sh script
+#### Without any installation using a sh script
 
 Anywhere in your terminal execute:
 
@@ -22,27 +22,27 @@ Anywhere in your terminal execute:
 curl https://raw.githubusercontent.com/alepoletto/gas-mission/master/scripts/standalone-gasmission.sh | sh
 ```
 
-you also can manually download [standalone-gasmission.sh](https://raw.githubusercontent.com/alepoletto/gas-mission/master/scripts/standalone-gasmission.sh). and execute in the same folder:
+You can also manually download [standalone-gasmission.sh](https://raw.githubusercontent.com/alepoletto/gas-mission/master/scripts/standalone-gasmission.sh). and execute in the same folder:
 
 ```shell
 sh standalone-gasmission.sh
 ```
 
-If you already cloned the repository you can go to the project folder and execute:
+If you have already cloned the repository, go to the project folder and execute:
 
 ```shell
 sh scripts/gasmission.sh
 ```
 
-#### without any installation using using docker
+#### Using docker
 
-anywhere in your terminal run:
+Anywhere in your terminal run:
 
 ```shell
 docker run  alepoletto/gasmission
 ```
 
-this will download the image from dockerhub.
+This will download an image from dockerhub.
 
 If you want to build your own image, execute the follow in the project directory:
 
