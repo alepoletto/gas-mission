@@ -4,9 +4,9 @@ const chalk = require('chalk');
 const readline = require('readline');
 const TestCase = require('./TestCase');
 
+const tests = [];
 let firstLine = true;
-let numberOftests = 0;
-let tests = [];
+let testCount = 0;
 let currentTest = null;
 let lines = 0;
 let init = false;
@@ -16,7 +16,9 @@ const rootPath = process.cwd();
 const processFile = fileName => {
   return new Promise((resolve, reject) => {
     const fileStream = fs.createReadStream(rootPath + '/' + fileName);
-
+    fileStream.on('error', error => {
+      reject(`Error to process the file ${fileName} => ${error}`);
+    });
     const rl = readline.createInterface({
       input: fileStream,
       crlfDelay: Infinity
@@ -24,9 +26,13 @@ const processFile = fileName => {
 
     rl.on('line', line => {
       parseLine(line.trim());
-    }).on('close', () => {
-      resolve(tests);
-    });
+    })
+      .on('error', error => {
+        reject(`Error to read the line from ${fileName} => ${error}`);
+      })
+      .on('close', () => {
+        resolve(tests);
+      });
   });
 };
 
@@ -53,7 +59,7 @@ const parseLine = line => {
   let lineData = line.split(' ');
 
   if (firstLine) {
-    numberOftests = parseInt(line);
+    testCount = parseInt(line);
     firstLine = false;
   }
 
