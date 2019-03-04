@@ -13,7 +13,7 @@ npm install
 npm start
 ```
 
-#### using a sh script
+#### without any installation using a sh script
 
 Anywhere in your terminal execute:
 
@@ -34,7 +34,7 @@ If you already cloned the repository you can go to the project folder and execut
 sh scripts/gasmission.sh
 ```
 
-#### using docker
+#### without any installation using using docker
 
 anywhere in your terminal run:
 
